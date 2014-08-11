@@ -1,1 +1,20 @@
 <h2>Welcome</h2>
+
+<a href="/about">About</a>
+<br/>
+<br/>
+<%=link_to "New gif", new_gif_path%>
+
+<br/>
+<br/>
+
+
+
+<%@gifs.each do |gif| %>
+
+<img src=<%=gif.url%>/><br/>
+<%=gif.title%>
+<br/>
+<br/>
+
+<%end%>

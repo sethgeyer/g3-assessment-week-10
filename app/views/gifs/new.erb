@@ -1,0 +1,38 @@
+<div id="new_gifs">
+
+<h1>New gif</h1>
+
+  <%if @gif.errors.full_messages.any?%>
+    <%@gif.errors.full_messages.each do |message|%>
+      <% if message.include?("Url")%>
+        <div class="errors">URL can't be blank</div>
+      <%else%>
+        <div class="errors"><%=message%></div>
+      <%end%>
+      <br/>
+    <%end%>
+  <%end%>
+
+  <br/>
+  <br/>
+
+  <%=form_for @gif do |f|%>
+    <div>
+      <%=f.label :url, "URL" %>
+      <%=f.text_field :url %>
+      <div class="errors"><%=@gif.errors[:url].first if @gif.errors[:url].any? %></div>
+    </div>
+
+    <div>
+      <%=f.label :title %>
+      <%=f.text_field :title %>
+      <div class="errors"><%=@gif.errors[:title].first if @gif.errors[:title].any? %></div>
+    </div>
+
+    <div>
+      <%=f.submit "Create gif" %>
+    </div>
+
+  <%end%>
+
+</div>
