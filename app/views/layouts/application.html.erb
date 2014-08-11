@@ -8,9 +8,12 @@
 </head>
 <body>
 
+<div class="wrapper">
+
 <%= flash[:notice] if flash[:notice]%>
 
 <%= yield %>
 
+</div>
 </body>
 </html>

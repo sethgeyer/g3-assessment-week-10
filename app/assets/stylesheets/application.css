@@ -14,6 +14,18 @@
  *= require_self
  */
 
+
+.wrapper {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+
+.img {
+    width: 300px
+}
+
+
 .errors {
     color:red;
     display:inline;
